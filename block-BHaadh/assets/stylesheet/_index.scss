@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(128, 151, 240);
+}
+h1{
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-decoration: underline;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 50px 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 200px;
+  height: 200px;
+  margin: 200px auto;
+  perspective:800;
+  
+  position: relative;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cube {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  
+  transform:  translateZ(-100px);
+  transform-style: preserve-3d;
+}
+
+.side{
+  background-color: rgba(7, 183, 206, 0.918);
+  border: 4px solid #fff;
+  position: absolute;
+  height: 196px;
+  width: 196px;
+}
+
+.front{
+  transform: translateZ(100px);
+}
+.back{
+  transform: rotateX(180deg) rotateZ(180deg) translateZ(100px);
+}
+.left{
+  transform: rotateY(-90deg) translateZ(100px) ;
+}
+.right{
+  transform: rotateY(90deg) translateZ(100px);
+}
+.top{
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom{
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.spin{
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+.spin:hover{
+  animation: spin 5s  linear infinite;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotateY(0deg);
+  }100%{
+    transform: rotateY(-360deg);
+  }
+}
